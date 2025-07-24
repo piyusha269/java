@@ -37,20 +37,26 @@ public class CalcyUsingMethod {
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         CalcyUsingMethod calculator = new CalcyUsingMethod();
-       
-        
-        System.out.println("------ Calculator ------");
-        System.out.println("1. Addition");
-        System.out.println("2. Subtraction");
-        System.out.println("3. Multiplication");
-        System.out.println("4. Division");
-        System.out.print("Enter your choice (1-4): ");
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-        calculator.inputNumbers();
+        int choice;
 
+        do{
+            System.out.println("");
+            System.out.println("------ Calculator ------");
+            System.out.println("1. Addition");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice (1-5): ");
+            
+            choice = sc.nextInt();
+            System.out.println("------------------------");
+            System.out.println("");
+            calculator.inputNumbers();
+        
         switch (choice) {
             case 1:
                 calculator.add();
@@ -64,11 +70,14 @@ public class CalcyUsingMethod {
             case 4:
                 calculator.divide();
                 break;
+            case 5:
+                 System.out.println("Thank You !");
+                 break;
             default:
                 System.out.println("Invalid choice.");
-        }
+           }
 
-        sc.close();
+        } while(choice != 5);
     }
     
 }
